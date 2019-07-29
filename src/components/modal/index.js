@@ -23,6 +23,8 @@ export class Modal extends Component {
   
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.addProduct(this.state)
+    this.props.visibleModal();
   }
 
     render() {
@@ -42,8 +44,8 @@ export class Modal extends Component {
                   <input type="number" name="available" onChange={this.newProduct} required/>
                 </div>
                 <div className="btn">
-                  <button className="add-product" type="submit" onClick={() => this.props.addProduct(this.state)}>Add</button>
-                  <button className="btn-cancel" onClick={this.props.visibleModal}>Cancel</button>
+                  <button className="add-product" type="submit">Add</button>
+                  <button className="btn-cancel" type="reset" onClick={this.props.visibleModal}>Cancel</button>
                 </div>
               </form>
             </div>

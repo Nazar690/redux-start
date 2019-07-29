@@ -5,20 +5,23 @@ import {fetchGithubData} from '../../actions/products.action'
 import './product-list.css';
 
 export class ProductList extends Component {
-
-  componentDidMount() {
-    this.props.getProduct();
+  constructor() {
+    super()
+    this.state = {
+      name: ""
+    }
   }
+  
 
   renderProducts() {
-    let sorted = this.sortByName();
+    let sorted = this.state.name === "name" ? this.sortByName() : this.state.name === "price" ? this.sortByPrice() : this.sortByAvailable();
     return sorted.map((i, index) => (
       <div className="product_list_item" key={index}>
         <p>{i.name}</p>
         <p>Price: {i.price}</p>
         <p>Available: {i.available}</p>
         <p>{i.available > 0 ? 'In stock' : 'Sold out'}</p>
-        <button className="add-to-cart-btn" disabled = {i.available === 0 ? true : false} onClick={() => this.props.add(i)}>Add to card</button>
+        <button className="add-to-cart-btn" disabled = {i.available === 0} onClick={() => this.props.add(i)}>Add to card</button>
       </div>
     ));
   }
@@ -28,7 +31,6 @@ export class ProductList extends Component {
       if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
       return 0; 
     })
-  
 
   sortByPrice = () => this.props.product.products.sort((a, b) => b.price - a.price);
   
@@ -36,8 +38,10 @@ export class ProductList extends Component {
   sortByAvailable = () => this.props.product.products.sort((a, b) => b.available - a.available);
 
   getValue = (e) => {
-    let value = e.target.value === undefined ? e.target.value : 'name';
-    return value;
+    let value = e.target.value !== undefined ? e.target.value : 'name';
+    this.setState({
+      name: value
+    })
   }
 
   render() {
@@ -48,7 +52,7 @@ export class ProductList extends Component {
           <option value="availability">Availability</option>
         </select>
       <div className="App-product_list">
-        {this.renderProducts()}
+        {this.renderProducts("name")}
       </div>
     </div>);
   }

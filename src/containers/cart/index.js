@@ -6,13 +6,12 @@ import './cart.css';
 export class Cart extends Component {
 
   render() {
+    let carts = this.props.cart.inCart;
     return (<div className="App-cart">
-      {!this.props.cart.inCart.length ? 'Your cart is empty :(' : this.props.cart.inCart.map((cart, index) => (
-        <div className="product_list_item" key={index}>
+      {!carts.length ? 'Your cart is empty :(' : carts.map((cart, index) => (
+        <div className="cart_list_item" key={index}>
           <p>{cart.name}</p>
-          <p>Price: {cart.price}</p>
-          <p>{cart.available > 0 ? 'In stock' : 'Sold out'}</p>
-          <button className="remove-from-cart-btn" onClick={() => this.props.remove(index)}>Remove from card</button>
+          <button className="remove-from-cart-btn" onClick={() => this.props.remove(index)}>Delete</button>
         </div>
       ))}
     </div>);

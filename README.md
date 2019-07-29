@@ -25,15 +25,15 @@
         <li>Implement possibility to add a product into cart +</li>
         <li>Hide or disable 'Add to cart' button in case if product sold out +</li>
         <li>Implement possibility to add new product into product list. Use html5 native modal window (for form).+</li>
-        <li>Implement sorting by <b>Name</b>, <b>Price</b>, <b>Availability</b></li>
+        <li>Implement sorting by <b>Name</b>, <b>Price</b>, <b>Availability</b>+</li>
         <li>Refactor reducer, load data using xhr - find how to deal with async operations using redux-thunk (your product list should be saved into JSON file)+</li>
     </ul>
     <b>Cart page</b>
     <ul>
         <li>Implement the list of products that user adds to cart +</li>
         <li>Implement possibility to remove the product from cart +</li>
-        <li>Implement possibility to increase product count (check how many items are available) +</li>
-        <li>Implement possibility to decrease product count (and also update product available count) +</li>
+        <li>Implement possibility to increase product count (check how many items are available) +/-</li>
+        <li>Implement possibility to decrease product count (and also update product available count) +/-</li>
         <li>Show msg that Cart is empty in case if user clean it +</li>
     </ul>
     <b>Extra</b>
