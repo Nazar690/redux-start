@@ -1,0 +1,67 @@
+.App {
+    text-align: left;
+}
+
+.App-header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #222;
+    height: 50px;
+    padding: 20px;
+    color: white;
+}
+
+.App-header a {
+    color: white;
+    text-decoration: none;
+}
+
+.App-count-items {
+    padding-right: 20px; 
+}
+
+.App-new-product {
+    position: absolute;
+    top: 50px;
+    left: 80%;
+}
+
+.modal-window {
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.modal-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 100px;
+    background-color: #fff;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    padding-top: 50px;
+    padding-left: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.input-field {
+    margin-right: 20px;
+}
+
+.btn .add-product {
+    margin-right: 20px;
+}
+
+.App-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
