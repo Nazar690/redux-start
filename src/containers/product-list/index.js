@@ -8,7 +8,7 @@ export class ProductList extends Component {
   constructor() {
     super()
     this.state = {
-      name: ""
+      name: "name"
     }
   }
   
@@ -52,7 +52,7 @@ export class ProductList extends Component {
           <option value="availability">Availability</option>
         </select>
       <div className="App-product_list">
-        {this.renderProducts("name")}
+        {this.renderProducts()}
       </div>
     </div>);
   }
